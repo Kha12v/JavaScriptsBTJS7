@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+    <div class="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6">
+        <!-- Gợi ý -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-700 p-4 rounded mb-4">
+            <p class="text-sm font-bold">🔥[BÀI_TẬP] BÀI TẬP JS BUỔI 5 || Deadline
+                13/11/2024🔥</p>
+        </div>
+
+        <!-- Input và nút thêm số -->
+        <div class="flex items-center space-x-2 mb-4">
+            <input type="number" placeholder="Nhập số n"
+                class="border rounded-lg p-2 flex-1 focus:ring focus:ring-blue-300">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Thêm số</button>
+        </div>
+        <!-- Accordion -->
+        <div class="space-y-4">
+            <!-- Accordion Item 1 -->
+            <div class="border rounded-lg">
+                <button
+                    class="flex justify-between items-center w-full p-4 bg-blue-50 text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+                    onclick="toggleAccordion('accordion-1')">
+                    <span class="text-black font-bold">1️⃣ Tổng số dương</span>
+                    <svg id="arrow-accordion-1" class="h-5 w-5 transform transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="accordion-1" class="hidden p-4">
+                    <p class="mb-2">💡Gợi ý:
+                        <br>
+                        🔸Cho người dùng nhập vào các số nguyên và lưu trữ trong mảng.
+                        <br>
+                        🔸Tính tổng các số dương trong mảng.
+                    </p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Tính tổng</button>
+                    <!--kết quả sẽ hiển thị ở đây-->
+                    <div id="result-container-TongSoDuong">
+                        <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                            <p>
+                                👉<span id="result-TongSoDuong"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="border rounded-lg">
+                <button
+                    class="flex justify-between items-center w-full p-4 bg-blue-50 text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+                    onclick="toggleAccordion('accordion-2')">
+                    <span class="text-black font-bold">2️⃣ Đếm số dương</span>
+                    <svg id="arrow-accordion-2" class="h-5 w-5 transform transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="accordion-2" class="hidden p-4">
+                    <p class="mb-2">💡Gợi ý:
+                        <br>
+                        🔸Đếm có bao nhiêu số dương trong mảng.
+                    </p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Đếm Số</button>
+                    <!--kết quả sẽ hiển thị ở đây-->
+                    <div id="result-container-DemSoDuong">
+                        <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                            <p>
+                                👉<span id="result-DemSoDuong"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="border rounded-lg">
+                <button
+                    class="flex justify-between items-center w-full p-4 bg-blue-50 text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+                    onclick="toggleAccordion('accordion-3')">
+                    <span class="text-black font-bold">3️⃣ Tìm số nhỏ nhất</span>
+                    <svg id="arrow-accordion-3" class="h-5 w-5 transform transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="accordion-3" class="hidden p-4">
+                    <p class="mb-2">💡Gợi ý:
+                        <br>
+                        🔸Tìm số nhỏ nhất trong mảng.
+                    </p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Tìm số nhỏ
+                        nhất</button>
+                    <!--kết quả sẽ hiển thị ở đây-->
+                    <div id="result-container-TimSoNhoNhat">
+                        <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                            <p>
+                                👉<span id="result-TimSoNhoNhat"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div class="border rounded-lg">
+                <button
+                    class="flex justify-between items-center w-full p-4 bg-blue-50 text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+                    onclick="toggleAccordion('accordion-4')">
+                    <span class="text-black font-bold">4️⃣ Tìm số dương nhỏ nhất</span>
+                    <svg id="arrow-accordion-4" class="h-5 w-5 transform transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="accordion-4" class="hidden p-4">
+                    <p class="mb-2">💡Gợi ý:
+                    <ul>
+                        <li>🔸Tạo thêm 1 mảng mới dùng để chứa các số dương</li>
+                        <li>🔸Dùng vòng lặp để lấy các số dương từ mảng cũ và lưu vào trong mảng mới</li>
+                        <li>🔸Kiểm tra mảng mới có phần tử hay không. Nếu có thì bắt đầu đi tìm giá trị dương nhỏ nhất.
+                            Ngược lại thì thông báo không có số dương</li>
+                    </ul>
+                    </p>
+                    <button class="bg-blue-500 mt-2 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Tìm số dương nhỏ
+                        nhất</button>
+                    <!--kết quả sẽ hiển thị ở đây-->
+                    <div id="result-container-TimSoDNhoNhat">
+                        <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                            <p>
+                                👉<span id="result-TimSoDNhoNhat"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 5 -->
+            <div class="border rounded-lg">
+                <button
+                    class="flex justify-between items-center w-full p-4 bg-blue-50 text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+                    onclick="toggleAccordion('accordion-5')">
+                    <span class="text-black font-bold">5️⃣ Tìm số chẵn cuối cùng</span>
+                    <svg id="arrow-accordion-5" class="h-5 w-5 transform transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="accordion-5" class="hidden p-4">
+                    <p class="mb-2">💡Gợi ý:
+                    <ul>
+                        <li>🔸Tạo 1 biến chứa số chẵn cuối cùng</li>
+                        <li>🔸Dùng vòng lặp duyệt mảng và kiểm tra số chẵn. Nếu là số chẵn thì gán vào biến.</li>
+                    </ul>
+                    </p>
+                    <button class="bg-blue-500 mt-2 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Tìm số chẵn
+                    </button>
+                    <!--kết quả sẽ hiển thị ở đây-->
+                    <div id="result-container-TimSoDNhoNhat">
+                        <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                            <p>
+                                👉<span id="result-TimSoDNhoNhat"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/toggleAccordion.js">
+    </script>
+</body>
+
+</html>
