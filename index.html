@@ -314,7 +314,15 @@
                     <div class="flex items-center space-x-2 mb-4">
                         <input type="number" placeholder="Nhập số"
                             class="border rounded-lg p-2 flex-1 focus:ring focus:ring-blue-300">
-                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Thêm số</button>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" onclick="addNumber()">Thêm số</button>
+                    </div>
+                    <!--kết quả sẽ hiển thị ở đây-->
+                    <div id="result-container-ThemDeDemSo">
+                        <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                            <p>
+                                👉<span id="result-ThemDeDemSo"></span>
+                            </p>
+                        </div>
                     </div>
                     <button class="bg-blue-500 mt-2 text-white px-4 py-2 rounded-lg hover:bg-blue-600" onclick="countIntegers()">Đếm số nguyên
                     </button>
